@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            border:3px solid red;
+        }
+    </style>
+    <script>
+        // all code written outside of any function gets executed at the start
+        console.log("Hello from script tag");
+
+        
+        function doBindings(){
+            var submitBtn = document.getElementById("submitBtn");
+        submitBtn.onclick = handleFormSubmission;
+        }
+        // setTimeout(doBindings,3000);
+        window.onload = doBindings;
+
+        function handleFormSubmission(){
+            // console.log(e);
+            console.log("inside handleFormSubmission");
+            let search = document.getElementById("search");
+            if(search.value) {
+                console.log("Form is valid");
+            }else {
+                console.log("form is not valid");
+                let wrapper= document.getElementById("formWrapper");
+                wrapper.classList.add("error");
+            }
+        }
+        // handleFormSubmission();
+    </script>
+</head>
+<body>
+    <!-- <form action="https://google.com/search"> -->
+        <div id="formWrapper" class="">
+            <input type="text" id="search" name="q1" placeholder="Start Typing ..."/>
+            <input id="submitBtn" type="submit" >
+        </div>
+    <!-- </form> -->
+</body>
+</html>

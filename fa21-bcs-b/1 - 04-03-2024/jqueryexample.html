@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            border:3px solid red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        // all code written outside of any function gets executed at the start
+        console.log("Hello from script tag");
+
+        
+        function doBindings(){
+        // var submitBtn = document.getElementById("submitBtn");
+        // submitBtn.onclick = handleFormSubmission;
+        $("#submitBtn").on("click",handleFormSubmission)
+        }
+        // setTimeout(doBindings,3000);
+        // window.onload = doBindings;
+        $(doBindings);
+        function handleFormSubmission(event){
+            // console.log(e);
+            console.log("inside handleFormSubmission");
+            let search = document.getElementById("search");
+            if(search.value) {
+                console.log("Form is valid");
+            }else {
+                console.log("form is not valid");
+                event.preventDefault();
+                // let wrapper= document.getElementById("formWrapper");
+                // wrapper.classList.add("error");
+                $("#formWrapper").addClass("error")
+            }
+        }
+        // handleFormSubmission();
+    </script>
+</head>
+<body>
+    <form action="https://google.com/search">
+        <div id="formWrapper" class="">
+            <input type="text" id="search" name="q1" placeholder="Start Typing ..."/>
+            <input id="submitBtn" type="submit" >
+        </div>
+    </form>
+</body>
+</html>
