@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var clickCount = 0;
+    window.onload = doBindings;
+    function doBindings(){
+        let clickCounterBtn = document.getElementById("clickCounterBtn");
+        clickCounterBtn.onclick = clickCounterClickHandler;
+    }
+    function clickCounterClickHandler(){
+        let result = document.getElementById("result");
+        clickCount = clickCount+1;
+        result.innerHTML = "Clicked: "+ clickCount + " Times"
+    }
+</script>
+<body>
+    <button id="clickCounterBtn">Click Counter</button>
+    <div id="result">Clicked: 0 Times</div>
+</body>
+</html>
