@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            border:5px solid red
+        }
+    </style>
+    <script>
+        console.log("JS Code Started");
+        function handleFormSubmit(event){
+            console.log("Handle Form Submit Called");
+            console.log(event);
+            
+            let search = document.getElementById("search");
+            if(search.value){
+                console.log("Form is Valid");
+            }else{
+                console.log("Form is invalid");
+                event.preventDefault();
+                search.classList.add("error")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="http://google.com/search">
+        <input id="search" type="text" name="q" class="">
+        <input id="submitBtn" type="submit" value="Search" onclick="handleFormSubmit(event)"/>
+    </form>
+</body>
+</html>
