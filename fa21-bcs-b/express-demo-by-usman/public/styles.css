@@ -1,0 +1,9 @@
+h1{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#menu li{
+    display:inline;
+}

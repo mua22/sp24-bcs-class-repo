@@ -1,0 +1,9 @@
+<h1>
+    <%= pageTitle %>
+</h1>
+
+<% for( let index = 0; index < games.length; index++ ) { %>
+<div class="game">
+    <h3 class="game-title"><%= games[index].title %></h3>
+</div>
+<% } %>
