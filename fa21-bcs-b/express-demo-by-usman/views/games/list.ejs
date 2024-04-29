@@ -1,9 +1,20 @@
 <h1>
     <%= pageTitle %>
 </h1>
-
+<a href="/games/new">Add New Game</a>
+<br>
+Page: <%= page %> Records: <%= total %>
+<ul>
+    <% for( let index = 1; index <= totalPages; index++ ) { %>
+        <li style="display: inline;">
+            <a href="/games/<%= index %>"><%= index %></a>
+        </li>
+    <% } %>
+</ul>
 <% for( let index = 0; index < games.length; index++ ) { %>
 <div class="game">
     <h3 class="game-title"><%= games[index].title %></h3>
+    <a href="/games/<%= games[index]._id %>/edit">Edit</a>
+    <a href="/games/<%= games[index]._id %>/delete">Del</a>
 </div>
 <% } %>

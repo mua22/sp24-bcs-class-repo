@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Mobile = require("./models/Mobile");
 let server = express();
 server.use(express.json());
+server.use(express.urlencoded());
 server.set("view engine", "ejs");
 server.use(express.static("public"));
 var expressLayouts = require("express-ejs-layouts");
