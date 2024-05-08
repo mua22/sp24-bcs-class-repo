@@ -1,0 +1,28 @@
+<h1><%= pageTitle %></h1>
+<% console.log("Inside List.ejs File") %>
+<a href="/students/new">Add New Student</a>
+<table style="width: 100%;" border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for( let index = 0; index < students.length; index++ ) { %>
+            <tr>
+                <td><%= students[index]._id %></td>
+                <td><%= students[index].name %></td>
+                <td><%= students[index].address %></td>
+                <td>
+                        <a href="/students/add-to-cart/<%= students[index]._id %>">Add to Cart</a>
+                        <a href="/students/delete/<%= students[index]._id %>">Del</a>
+                        <a href="/students/edit/<%= students[index]._id %>">Edit</a>
+                </td>
+                
+            </tr>
+        <% } %>
+    </tbody>
+</table>

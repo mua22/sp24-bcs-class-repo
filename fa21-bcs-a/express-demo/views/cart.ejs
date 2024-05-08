@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <% students.forEach(std => { %>
+     <tr>
+         <td><%= std.name %></td>
+         <td></td>
+         <td></td>
+     </tr>
+
+    <% }) %>
+    <tfoot>
+        <tr>
+            <td colspan="2">Total</td>
+            <td>Amount</td>
+        </tr>
+    </tfoot>
+</table>

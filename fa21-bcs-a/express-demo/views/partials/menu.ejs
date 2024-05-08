@@ -1,4 +1,15 @@
 <ul id="menu">
     <li><a href="/">Home Page</a></li>
     <li><a href="/contact-us">Contact Us</a></li>
+    <li><a href="/students">Students</a></li>
+    <li><a href="/cart">Cart (<%= cart.length %>)</a></li>
+    <% if (user) { %>
+        <li><a href="/logout">Logout</a></li>
+        <li>Welcome <%= user.name %></li> 
+    <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+    <% } %>
+    
+    
 </ul>
