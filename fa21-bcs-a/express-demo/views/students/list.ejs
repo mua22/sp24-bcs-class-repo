@@ -1,6 +1,9 @@
 <h1><%= pageTitle %></h1>
 <% console.log("Inside List.ejs File") %>
 <a href="/students/new">Add New Student</a>
+<% for( let index = 1; index <= totalPages; index++ ) { %>
+    <li><a href="/students/<%= index %>"><%= index %></a></li>
+<% } %>
 <table style="width: 100%;" border="1">
     <thead>
         <tr>

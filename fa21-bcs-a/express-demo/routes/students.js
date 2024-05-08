@@ -41,11 +41,24 @@ router.post("/edit/:id", async (req, res) => {
   return res.redirect("/students");
 });
 
-router.get("/", async (req, res) => {
+router.get("/:page?", async (req, res) => {
   let pageTitle = "List of All students";
-  let students = await Student.find();
+
+  let page = req.params.page ? req.params.page : 1;
+  let pageSize = 3;
+  let skip = (page - 1) * pageSize;
+  let total = await Student.countDocuments();
+  let totalPages = Math.ceil(total / pageSize);
+  let students = await Student.find().limit(pageSize).skip(skip);
   //   return res.send(students);
-  return res.render("students/list", { pageTitle, students });
+  return res.render("students/list", {
+    pageTitle,
+    students,
+    page,
+    pageSize,
+    total,
+    totalPages,
+  });
 });
 
 module.exports = router;
