@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import SingleGame from "./components/SingleGame";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 style={{ color: "white", paddingTop: "15px" }}>Hello B Section</h1>
+      <p>Welcome to React Course</p>
+      <SingleGame price="55" name="GTA" />
+      <SingleGame price="44" name="MOHAA" />
     </div>
   );
-}
+};
 
 export default App;
